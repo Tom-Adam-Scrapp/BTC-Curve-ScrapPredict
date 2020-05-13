@@ -389,14 +389,17 @@ def on_click_button_updating_graph(event):
     """
 
     global update_graph
-    if not update_graph:
-        update_graph = True
-        button_graph_string.set("Stop graph")
-        webscrap_to_graph_update()
-    else:
-        update_graph = False
-        button_graph_string.set("Launch graph")
-
+    try:
+            
+        if not update_graph:
+            update_graph = True
+            button_graph_string.set("Stop graph")
+            webscrap_to_graph_update()
+        else:
+            update_graph = False
+            button_graph_string.set("Launch graph")
+    except :
+        print("too early")
 
 def webscrap_to_graph_update():
     """
